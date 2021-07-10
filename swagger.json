@@ -1,0 +1,140 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Emailer",
+    "version": "1.0"
+  },
+  "host": "host_name",
+  "basePath": "/messages",
+  "schemes": [ "https" ],
+  "paths": {
+    "/email": {
+      "post": {
+        "description": "Sends Emails",
+        "operationId": "email",
+        "summary": "Email sender",
+        "tags": [ "email" ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/email"
+            }
+          }
+        ],
+        "consumes": [ "application/json" ],
+        "produces": [ "text/plain" ],
+        "responses": {
+          "200": {
+            "description": "Your request was received successfully",
+            "schema": {
+              "$ref": "#/definitions/EmailPost200TextPlainResponse"
+            }
+          },
+          "202": {
+            "description": "Request has been accepted for further processing.",
+            "schema": {
+              "$ref": "#/definitions/EmailPost202TextPlainResponse"
+            }
+          },
+          "400": {
+            "description": "Invalid input",
+            "schema": {
+              "$ref": "#/definitions/EmailPost400TextPlainResponse"
+            }
+          },
+          "401": {
+            "description": "Requested resource requires authentication",
+            "schema": {
+              "$ref": "#/definitions/EmailPost401TextPlainResponse"
+            }
+          },
+          "408": {
+            "description": "Client did not send a request within the time the server was expecting the request.",
+            "schema": {
+              "$ref": "#/definitions/EmailPost408TextPlainResponse"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "email": {
+      "type": "object",
+      "properties": {
+        "appid": {
+          "type": "string"
+        },
+        "recipients": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "cc": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "bcc": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "subject": {
+          "type": "string"
+        },
+        "body": {
+          "type": "string"
+        },
+        "footer": {
+          "type": "string"
+        }
+      },
+      "example": {
+        "appid": "string",
+        "recipients": [ "string" ],
+        "cc": [ "string" ],
+        "bcc": [ "string" ],
+        "subject": "string",
+        "body": "string",
+        "footer": "string"
+      }
+    },
+    "EmailPost200TextPlainResponse": {
+      "type": "string"
+    },
+    "EmailPost202TextPlainResponse": {
+      "type": "string"
+    },
+    "EmailPost400TextPlainResponse": {
+      "type": "string"
+    },
+    "EmailPost401TextPlainResponse": {
+      "type": "string"
+    },
+    "EmailPost408TextPlainResponse": {
+      "type": "string"
+    },
+    "SmsGet200TextPlainResponse": {
+      "type": "string"
+    },
+    "SmsGet202TextPlainResponse": {
+      "type": "string"
+    },
+    "SmsGet400TextPlainResponse": {
+      "type": "string"
+    },
+    "SmsGet401TextPlainResponse": {
+      "type": "string"
+    },
+    "SmsGet408TextPlainResponse": {
+      "type": "string"
+    }
+  },
+  "tags": []
+}
