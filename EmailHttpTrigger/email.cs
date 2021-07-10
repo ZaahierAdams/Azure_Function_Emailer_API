@@ -30,7 +30,7 @@ namespace EmailerAPI
 
         [OpenApiOperation(operationId: "email", 
             tags: new[] { "Email" }, 
-            Summary = "TMSS Email sender", 
+            Summary = "Email sender", 
             Description = "Sends Emails", 
             Visibility = OpenApiVisibilityType.Important)]
 
