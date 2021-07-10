@@ -1,10 +1,10 @@
+// Developed: Zaahier Adams
+// https://github.com/ZaahierAdams 
+
 using System;
 using System.Data;
 using System.Data.SqlClient;
 using EmailerAPI.Objects;
-// Developed: Zaahier Adams
-// https://github.com/ZaahierAdams 
-
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Host;
 using Microsoft.Extensions.Logging;
